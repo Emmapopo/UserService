@@ -11,23 +11,23 @@ The user service is mainly used for four things. They include:
 But before any of these happen, some things have to be put in place. 
 1) Create a database 
 
-2) Run the create_tables.py file to add tables. 
-Do not forget to set the database details in environment variables. 
-The data to set include:
+2) Run the the yoyo migration files. Here are the Command Line Usage to note:
 
-a) host
-b) database
-c) user
-d) password
+a) To start a new migration:
+yoyo new ./migrations -m "Add column to foo"
 
-Once you set the variables, run the file to create the tables. 
+b) To apply a migration:
+yoyo apply --database postgresql://scott:tiger@localhost/db ./migrations
 
-4) Initialize some data in the tables by running the init_tables.py
-This file inserts the values for the countries and states tables respectively. 
+c) To rollback a migration:
+yoyo rollback --database postgresql://scott:tiger@localhost/db ./migrations
 
-5) Run the server.py file to start the server on port 50051
+d) To list available migrations:
+yoyo apply --database postgresql://scott:tiger@localhost/db ./migrations
 
-6) Run the client.py file to connect to the API gateway on port 5000
+3) Run the server.py file to start the server on port 50051
+
+4) Run the client.py file to connect to the API gateway on port 5000
 
 -----------------------------------------------------------------------------------
 
