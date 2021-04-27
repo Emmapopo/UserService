@@ -6,3 +6,4 @@ google
 protobuf
 python-dateutil
 grpc-tools
+yoyo-migrations
